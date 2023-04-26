@@ -7,13 +7,16 @@ const forecastContainer = document.getElementById('forecast-container');
 const searchHistoryContainer = document.getElementById('search-history-container');
 const apiKey = "dbc8865c28c2ad96f8f621df6535c4d4";
 let city = ""
+let searchHistory = JSON.parse(localStorage.getItem("search")) || [];
 
 // Event listener for form submit
 searchForm.addEventListener('submit', function (event) {
     event.preventDefault();
+    document.querySelector(".right-side").style.display = "block";
     city = cityInput.value;
     // Call API to fetch weather data for the city
     fetchWeatherData(city);
+    updateSearchHistory(city);
 });
 
 // Function to fetch weather data from API
@@ -37,7 +40,7 @@ function updateCurrentWeather(currentWeather) {
     // Update DOM with current weather data
     currentWeatherContainer.innerHTML = `
   <h2>${currentWeather.name}</h2>
-  <p>Date: ${new Date(currentWeather.dt * 1000).toLocaleDateString()}</p>
+  <p class="date-image">Date: ${new Date(currentWeather.dt * 1000).toLocaleDateString()} <img src="http://openweathermap.org/img/w/${currentWeather.weather[0].icon}.png" alt="weather icon"></p>
   <p>Temperature: ${currentWeather.main.temp}</p>
   <p>Humidity: ${currentWeather.main.humidity}</p>
   <p>Wind Speed: ${currentWeather.wind.speed}</p>
@@ -54,16 +57,37 @@ function updateFiveForecast(coord) {
         return response.json();
     }).then(function (data) {
         console.log(data);
-        forecastContainer.innerHTML = `
-        <h2>5-Day Forecast</h2>
-        </h2>`;
-        
+        forecastContainer.innerHTML = "";
+        for (let i = 0; i < data.list.length; i += 8) {
+            forecastContainer.innerHTML += `
+            <div class="card">
+            <div class="card-body">
+            <h5 class="card-title">${new Date(data.list[i].dt * 1000).toLocaleDateString()}</h5>
+            <img src="http://openweathermap.org/img/w/${data.list[i].weather[0].icon}.png" alt="weather icon">
+            
+            <p class="card-text">Temperature: ${((data.list[i].main.temp - 273.15) * 9 / 5 + 32).toFixed(2)}</p>
+            <p class="card-text">Humidity: ${data.list[i].main.humidity}</p>
+            <p class="card-text">Wind Speed: ${data.list[i].wind.speed}</p>
+            </div>
+            </div>
+            `
+        }
     })
 }
 
 // Function to update search history in DOM
 function updateSearchHistory(city) {
     // Update DOM with search history
+    if (!searchHistory.includes(city)) {
+        searchHistory.push(city);
+    }
+    localStorage.setItem("search", JSON.stringify(searchHistory));
+    searchHistoryContainer.innerHTML = "";
+    for (let i = 0; i < searchHistory.length; i++) {
+        searchHistoryContainer.innerHTML += `
+        <button onclick="fetchWeatherData('${searchHistory[i]}')">${searchHistory[i]}</button> 
+        `
+    }
 }
 
 // Event listener for clicking on a city in search history

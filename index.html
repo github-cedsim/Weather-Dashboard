@@ -1,26 +1,43 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Weather Dashboard</title>
   <!-- Add CSS and JavaScript file links -->
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <h1>Weather Dashboard</h1>
-  <form id="search-form">
-    <input type="text" id="city-input" placeholder="Enter a city">
-    <button type="submit">Search</button>
-  </form>
-  <div id="current-weather-container">
-    <!-- Display current weather information here -->
+  <div class="weather-wrapper">
+    <div class="left-side">
+      <h2>Search for a City:</h2>
+      <form id="search-form" class="form">
+        <input type="text" id="city-input" placeholder="Enter a city">
+        <button type="submit">Search</button>
+      </form>
+      <hr>
+      <div id="search-history-container">
+        <!-- Display search history here -->
+      </div>
+    </div>
+    <div class="right-side">
+     
+      <div id="current-weather-container">
+        <!-- Display current weather information here -->
+      </div>
+      <div id="five-day-forecast">
+        <h2>5-Day Forecast</h2>
+        <!-- Display forecast information here -->
+        <div id="forecast-container">
+
+        </div>
+      </div>
+    </div>
   </div>
-  <div id="forecast-container">
-    <!-- Display forecast information here -->
-  </div>
-  <div id="search-history-container">
-    <!-- Display search history here -->
-  </div>
+
   <!-- Add JavaScript file link -->
   <script src="script.js"></script>
 </body>
+
 </html>
