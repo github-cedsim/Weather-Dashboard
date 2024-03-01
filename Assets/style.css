@@ -1,0 +1,49 @@
+
+/* Styling for the heading */
+h1 {
+    text-align: center;
+    background-color: rebeccapurple;
+    color: #fff;
+    padding: 10px;
+    margin-top: 0;
+}
+
+/* Styling for the weather wrapper */
+.weather-wrapper {
+    display: flex;
+}
+
+/* Styling for the left side of the weather wrapper */
+.left-side {
+    width: 20%;
+    margin-right: 30px;
+}
+
+/* Styling for the heading within the left side */
+.left-side h2 {
+    margin-top: 0;
+}
+
+/* Styling for the right side of the weather wrapper */
+.right-side {
+    display: none;
+    width: 80%;
+}
+
+/* Styling for the search history container */
+#search-history-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+/* Styling for the buttons within the search history container */
+#search-history-container button {
+    margin: 5px;
+    background-color: gray;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    padding: 8px;
+}
