@@ -60,10 +60,19 @@ h1 {
     width: 35px;
 }
 
+/* Styling for the heading within the current weather container */
+#current-weather-container h2 {
+    display: inline-block;
+    font-size: x-large;
+    height: 25px;
+    width: 75px;
+    
+}
 /* Styling for the date and image within the current weather container */
-.date-image {
-    display: flex;
-    align-items: center;
+p.date-image {
+    display: inline-block;
+    font-size: x-large;
+    
 }
 
 /* Styling for the forecast container */
