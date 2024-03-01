@@ -1,50 +1,42 @@
 <!DOCTYPE html>
-    <html lang="en">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Weather Dashboard" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./Assets/style.css" />
+    <title>Weather Dashboard</title>
+  </head>
 
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta name="description" content="Weather Dashboard"/>
-        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-        <link rel="stylesheet" href="./Assets/style.css"/>
-        <title>Weather Dashboard</title>
-  
-    </head>
-
-    <body>
-  <h1>Weather Dashboard</h1>
-  <div class="weather-wrapper">
-    <div class="left-side">
-      <h2>Search for a City:</h2>
-      <form id="search-form" class="form">
-        <input type="text" id="city-input" placeholder="Enter a city">
-        <button type="submit">Search</button>
-      </form>
-      <hr>
-      <div id="search-history-container">
-
-        <!-- Display search history here -->
+  <body>
+    <h1>Weather Dashboard</h1>
+    <div class="weather-wrapper">
+      <div class="left-side">
+        <h2>Search for a City:</h2>
+        <form id="search-form" class="form">
+          <input type="text" id="city-input" placeholder="Enter a city">
+          <button type="submit">Search</button>
+        </form>
+        <hr/>
+        <div id="search-history-container">
+          <!-- Display search history here -->
+        </div>
       </div>
-    </div>
-    <div class="right-side">
-     
-      <div id="current-weather-container">
+      <div class="right-side">
+        <div id="current-weather-container">
+          <!-- Display current weather information here -->
+        </div>
+        <div id="five-day-forecast">
+          <h2>5-Day Forecast</h2>
 
-        <!-- Display current weather information here -->
-      </div>
-      <div id="five-day-forecast">
-        <h2>5-Day Forecast</h2>
-
-        <!-- Display forecast information here -->
-        <div id="forecast-container">
-
+          <!-- Display forecast information here -->
+          <div id="forecast-container"></div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- JavaScript file link -->
-  <script src="script.js"></script>
-    </body>
-
+    <!-- JavaScript file link -->
+    <script src="script.js"></script>
+  </body>
 </html>

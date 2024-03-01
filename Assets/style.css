@@ -1,4 +1,3 @@
-
 /* Styling for the heading */
 h1 {
     text-align: center;
@@ -46,4 +45,39 @@ h1 {
     border: none;
     color: #fff;
     padding: 8px;
+}
+
+/* Styling for the current weather container */
+#current-weather-container {
+    border: 1px solid black;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* Styling for the image within the current weather container */
+#current-weather-container img {
+    width: 35px;
+}
+
+/* Styling for the date and image within the current weather container */
+.date-image {
+    display: flex;
+    align-items: center;
+}
+
+/* Styling for the forecast container */
+#forecast-container {
+    display: flex;
+}
+
+/* Styling for the cards within the forecast container */
+#forecast-container .card {
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    width: calc(100%/5 - 20px);
+    background-color: rebeccapurple;
+    color: #fff;
 }
