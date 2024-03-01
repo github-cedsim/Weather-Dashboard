@@ -8,5 +8,6 @@ This is a weather dashboard that allows the user to search for a city and see th
 
 
 ## Deployed Application URL
+https://github-cedsim.github.io/Weather-Dashboard/
 
 
