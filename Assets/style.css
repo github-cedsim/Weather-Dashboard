@@ -1,6 +1,12 @@
+* {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;   
+}
+
 /* Styling for the heading */
 h1 {
     text-align: center;
+    font-size: 24px;
     background-color: rebeccapurple;
     color: #fff;
     padding: 10px;
@@ -65,13 +71,17 @@ h1 {
     display: inline-block;
     font-size: x-large;
     height: 25px;
-    width: 75px;
+    width: auto;
+    margin-right: 10px;
+    
     
 }
 /* Styling for the date and image within the current weather container */
 p.date-image {
     display: inline-block;
     font-size: x-large;
+    font-weight: bold;
+    
     
 }
 
